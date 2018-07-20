@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Desafio módulo 01 - Leandra Mendes do Vale</title>
+<script>
+    function formatar(mascara, documento){
+      var i = documento.value.length;
+      var saida = mascara.substring(0,1);
+      var texto = mascara.substring(i)
+
+      if (texto.substring(0,1) != saida){
+                documento.value += texto.substring(0,1);
+      }
+    }
+</script>
+  </head>
+  <body>
+    <form action="/check" method="POST">
+      <input type="text" name="nome" />
+      <input type="text" name="nascimento" maxlength="10" value="dd/mm/aaaa" OnKeyPress="formatar('00/00/0000', this)" />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
